@@ -1,10 +1,71 @@
 What happens when you initialize a repository? Why do you need to do it?
   1. An empty git repository is initialized
-  2. A .git hidden folder is created that is responsible for recording the revision histories of the repository
-  I need to initialize the git repository for the particular directory if I want to enable revision histories and control for that directory. Only after initializing the repository can I start committing my files.
+  2. A .git hidden folder is created that is responsible for storing and editing
+  everything that are related to recording the revision histories and
+  manipulating the revision control of the repository
+  I need to initialize the git repository for the particular directory if I want
+  to enable revision histories and control for that directory. Only after
+  initializing the repository can I start committing my files (either all of the
+  mor partially) into the repository.
 
-How is the staging area different from the working directory and the repository? What value do you think it offers?
-  Working directory = the entire directory that includes all the files associated with the project, in which all or only a part of the files being tracked for revision histories and control.
-  Repository = A set or a controlled area where all the files inside the repository are being tracked for revision histories and control.
-  Staging area = A intermediate layer between working directory and repository. Add files to the staging area, then commit the staging area to add these files to the repository and track them.
-  Staging area allows user to flexibly control exactly what files to be tracked and revision controlled in the working directory.
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+  Working directory = the entire directory that includes all the files associate
+  d with the project, in which all or only a part of the files are being tracked
+  for revision histories and control.
+  Repository = A set or a controlled area where all the files inside the
+  repository are being tracked for revision histories and control.
+  Staging area = A intermediate layer between working directory and repository.
+  Add files to the staging area, then commit the staging area to add these files
+  to the repository and track them.
+  Staging area allows user to flexibly control exactly what files to be tracked
+  and revision controlled in the working directory.
+  Example:
+  Files in staging area = the latest commit
+  Modifies a couple files in the working directory -> choose which one to add to
+  the staging area, which will replace existing copy in it or create new one if
+  not existing now
+  Commit the staging area = Create new commit in repository
+    Files that are changed get a new snapshot, files that are unchanged get
+    linked to the previous commit, files that are removed from staging area ->
+    are deleted in the new commit
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+  For each logical change, only add those files that are modified because of the
+  logical change to the staging area and commit them. Thus each commit will
+  based on one logical change only. Key point here is the basic premise of a
+  commit is a logical change, which can involve multiple files or just a single
+  file.
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+  If you want to create a new path for your project which in a general sense
+  exists simultaneously with your main branch, for example testing a new
+  experimental feature, developing for a new language, etc.
+  Branches would allow you to keep both versions of the project alive and to
+  develop on their own. Changes made to a particular branch will not be
+  reflected on the other ones so dependency between branches, or between 2
+  project pathways are eliminated and hence many file dependency associated
+  issues are not present. For example the master branch will the production copy
+  which will always work and the experimental branch allow you to test for new
+  features as such that the production copy will never be affected.
+
+How do the diagrams help you visualize the branch structure?
+  1. It shows the pathways of commits and the pathways of branches
+  2. It shows the parent relationships between commits
+  3. It shows reachability
+  You know what commit you can reach or cannot reach given the visual structure
+
+Auto merge = only keep the ones that are untouched, add the ones that are added
+by one side/ both sides, delete the ones that are deleted by one side/ both
+sides
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+  Merging two branches combine the progress on 2 branches together, a parent
+  commit is needed that both branches share in order for git to determine what
+  lines to include and not to include in the new commit.
+  Presenting it in the diagram gives an intuitive idea of how the branches
+  develop and come together and hence knowing what changes are incorporated and
+  what are not.
