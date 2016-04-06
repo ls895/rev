@@ -1,0 +1,4 @@
+What happens when you initialize a repository? Why do you need to do it?
+  1. An empty git repository is initialized
+  2. A .git hidden folder is created that is responsible for recording the revision histories of the repository
+  I need to initialize the git repository for the particular directory if I want to enable revision histories and control for that directory. Only after initializing the repository can I start committing my files.
