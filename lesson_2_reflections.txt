@@ -2,3 +2,9 @@ What happens when you initialize a repository? Why do you need to do it?
   1. An empty git repository is initialized
   2. A .git hidden folder is created that is responsible for recording the revision histories of the repository
   I need to initialize the git repository for the particular directory if I want to enable revision histories and control for that directory. Only after initializing the repository can I start committing my files.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+  Working directory = the entire directory that includes all the files associated with the project, in which all or only a part of the files being tracked for revision histories and control.
+  Repository = A set or a controlled area where all the files inside the repository are being tracked for revision histories and control.
+  Staging area = A intermediate layer between working directory and repository. Add files to the staging area, then commit the staging area to add these files to the repository and track them.
+  Staging area allows user to flexibly control exactly what files to be tracked and revision controlled in the working directory.
