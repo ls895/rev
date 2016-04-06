@@ -69,3 +69,13 @@ the diagram the way we do?
   Presenting it in the diagram gives an intuitive idea of how the branches
   develop and come together and hence knowing what changes are incorporated and
   what are not.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges
+manually?
+  Automatic merging helps with situations where no ambiguity is present. Manual
+  examination and execution are not required because git can clear identify
+  what's needed and what's not needed under these circumstances.
+  When ambiguity is present, git require the user to resolve a conflict, it's
+  pretty good because flexibility is given to users when they really do need it,
+  instead of if everything has to be merged manually, there's too much trivial
+  and redundant tasks to be completed.
