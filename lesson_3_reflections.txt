@@ -13,3 +13,18 @@ Describe the differences between forks, clones, and branches. When would you use
   Fork = clone someone else's github repository to your own github account so you can edit it.
   Clone = Make a copy between 2 repository offline, or copy a repository to your local computer from a online source
   Branch = Create pathways for the project revision history to preserve a particular path, try out experimental projects or even for different people to collaborate by creating their own branch off the main branch
+
+Git Pull
+Git Push
+origin/master = branch location on remote
+master = branch location on local computer
+They can get out of sync when I start committing my local repository because only master branch is updated locally, origin/master only gets updated when I fetch/ or push back to GitHub
+Git fetch + Git merge = Git pull (when there are conflicts during merging)
+Fast forward merging
+Git pull will change WORKING DIRECTORY <> the commit itself that you pull, and also the STAGING AREA <> exactly the same commit files that you pulled
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+  I don't need to have internet access when I reference to something previously committed while I work on my project offline. Especially useful when I expect myself to go offline for a prolonged period of time.
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+  Each person working on the project has to properly record their own changes and edits, where they changed something and why they changed something and everytime they want to combine work together they have to manually go through the merging process and discuss with each other. This can become time consuming and trivial when people simultaneously when on the same project. They would also need to find a common repository or a server to host their files and a series of revision records. Each user will need to manage their own list of revision records as well. Basically just doing everything that Git and GitHub manage for you manually.
